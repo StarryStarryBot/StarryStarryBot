@@ -17,6 +17,11 @@ class NightSky:
                 return star
 
 mySky = NightSky()
-print(mySky.find_star("Rigel"))
+star = mySky.find_star("Rigel")
+print(star)
+
+coord = SkyCoord(ra= float(star["ra"])* u.degree, dec = float(star["dec"]) * u.degree) 
+print(coord.ra)
+print(coord.dec)
         
 
