@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 import paho.mqtt.client as mqtt
  
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(11, GPIO.OUT)
 
 pwm=GPIO.PWM(11, 50)
