@@ -100,23 +100,25 @@ def on_calibrate(client, userdata, message):
 
 def on_coordinate(client, userdata, message):
     global theta, phi, direction
-    coord_str = message.payload.decode().split(',')
-    print(coord_str)
-    goal_theta = coord_str[0]
-    goal_phi = coord_str[1]
-    step_count = ((float(goal_theta)-theta)/360)*4096
-    q_phi = 10-float(goal_phi)/18
+    cstr = message.payload.decode()
+    if cstr != "":
+        coord_str = cstr.split(',')
+        print(coord_str)
+        goal_theta = coord_str[0]
+        goal_phi = coord_str[1]
+        step_count = ((float(goal_theta)-theta)/360)*4096
+        q_phi = 10-float(goal_phi)/18
 
-    if step_count >= 0:
-        direction = True
-        move_steps(step_count)
-    else:
-        direction = False
-        move_steps(-step_count)
+        if step_count >= 0:
+            direction = True
+            move_steps(step_count)
+        else:
+            direction = False
+            move_steps(-step_count)
 
-    pwm.ChangeDutyCycle(q_phi) 
-    theta = float(goal_theta)
-    phi = float(goal_phi)
+        pwm.ChangeDutyCycle(q_phi) 
+        theta = float(goal_theta)
+        phi = float(goal_phi)
 
 
 if __name__ == '__main__':
