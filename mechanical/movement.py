@@ -106,7 +106,7 @@ def on_coordinate(client, userdata, message):
         print(coord_str)
         goal_theta = coord_str[0]
         goal_phi = coord_str[1]
-        step_count = ((float(goal_theta)-theta)/360)*4096
+        step_count = int(((float(goal_theta)-theta)/360)*4096)
         q_phi = 10-float(goal_phi)/18
 
         if step_count >= 0:
