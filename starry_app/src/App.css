@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=K2D');
+
 .App {
   background: linear-gradient(114.95deg, rgba(235, 0, 255, 0.5) 0%, rgba(0, 0, 0, 0) 38.87%), linear-gradient(180deg, #004B5B 0%, #FFA7A7 100%), linear-gradient(244.35deg, #FFB26A 0%, #3676B1 50.58%, #00A3FF 100%), linear-gradient(244.35deg, #FFFFFF 0%, #007089 49.48%, #FF005C 100%), radial-gradient(100% 233.99% at 0% 100%, #6D3B00 0%, #8FFF00 100%), linear-gradient(307.27deg, #219D87 0.37%, #93C32E 50.19%, #2800C6 100%), radial-gradient(100% 140% at 100% 0%, #FF00C7 0%, #006C7A 49.48%, #760000 100%);
   width: 100vw;
@@ -8,58 +10,155 @@
 }
 
 .Layout {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 30px;
   width: 80vw;
   height: 80vh;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-}
 
-.Top {
   display: flex;
-  width: auto;
-  height: 12.5%;
   justify-content: center;
+  align-items: center;
+  gap: 3vw;
+
+  border: 10px double white;
+}
+
+.Left {
+  width: 35vw;
+  height: 80vh;
   color: white;
-  font-size: 25px;
-}
 
-.Middle {
+  font-family: 'K2D';
+
   display: flex;
-  width: auto;
-  background: rgba(255, 255, 255, 0.25);
-  height: 55%;
-  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 25px;
+  border-right: double 12px white;
 }
 
-.Bottom {
-  display: grid;
-  grid-template-columns: 35% 65%;
-  width: auto;
-  margin: 20px;
-  height: 20%;
+.Left h2 {
+  border-bottom: 4px white solid;
 }
 
-.Bottom-Left {
+.Box {
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  background-image: url('./astromap.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}
+
+.Right {
+  width: 35vw;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2vh;
+
+  border-radius: 15px;
+}
+
+.Right-Top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Right-Top h3 {
   color: white;
+  font-family: 'K2D';
   font-size: 20px;
+  margin-left: 2vw;
+  margin-top: -1vh;
+  font-size: 30px;
 }
 
-.Bottom-Right {
-  border-left: solid 2px white;
-  display: grid;
-  grid-template-columns: 40% 40%;
+.Right-Top h3 i {
+  color: white;
+  font-family: 'K2D';
+  font-size: 20px;
+  margin-left: 2vw;
+  font-size: 25px;
+}
+
+.List {
+  border-top: white solid 5px;
+  border-bottom: white solid 5px;
+  width: 100%;
+  height: 45%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  gap: 0.75vh;
+
+  overflow: scroll;
+}
+
+.List-Option {
+  background: white;
+  min-height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
+  cursor: pointer;
 }
 
-.Constellations {
-  background-color: black;
+.List-Option:hover {
+
+  background: royalblue;
 }
 
-.Stars {
-  background-color: black;
+.List-Left {
+  height: 100%;
+  width: 75%;
+
+  display: flex;
+  justify-content: left;
+  padding-left: 2vh;
+  align-items: center;
+  border-left: double 14px black;
+}
+
+.List-Right {
+  height: 100%;
+  width: 15%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Star-Image {
+  width: 4vh;
+  height: 4vh;
+  background-image: url('./Star.png');
+  background-size: contain;
+}
+
+.Button {
+  width: 40%;
+  height: 7.5%;
+  margin-top: 1vh;
+  background: white;
+  border-radius: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background: rgba(255, 255, 255, 0.85);
 }
