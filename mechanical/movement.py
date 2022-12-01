@@ -96,7 +96,7 @@ def on_calibrate(client, userdata, message):
 
 def on_coordinate(client, userdata, message):
     global theta, phi, direction
-    coord_str = message.payload.decode().split('')
+    coord_str = message.payload.decode().split(',')
     goal_theta = coord_str[0]
     goal_phi = coord_str[1]
     step_count = ((goal_theta-theta)/360)*4096
