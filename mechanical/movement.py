@@ -121,6 +121,7 @@ if __name__ == '__main__':
     while True: 
         if move:
             move_steps(1)
+            time.sleep(0.002)
     
 
  
