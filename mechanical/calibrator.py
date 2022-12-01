@@ -1,7 +1,9 @@
 from pynput.keyboard import Key, Listener
 import paho.mqtt.client as mqtt
+import time 
 
 calibrated = False
+repeatFlag = False
 theta = 0
 phi = 0
 
@@ -34,6 +36,7 @@ if __name__ == '__main__':
         listener.join()
 
     while True: 
-        if calibrated == True:
+        if calibrated == True:  
             coords = input("Enter coordinates: ")
-            client.publish("starryStarry/coordinates", coords)
+            if coords != '':
+                client.publish("starryStarry/coordinates", coords)

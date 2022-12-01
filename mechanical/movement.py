@@ -22,6 +22,9 @@ step_count = 4096 # 5.625*(1/64) per step, 4096 steps is 360°
 direction = True # True for clockwise, False for counter-clockwise
 move = False #True for any movement, False for stopping 
 
+theta = 0
+phi = 0
+
 # defining stepper motor sequence (found in documentation http://www.4tronix.co.uk/arduino/Stepper-Motors.php)
 step_sequence = [[1,0,0,1],
                  [1,0,0,0],
