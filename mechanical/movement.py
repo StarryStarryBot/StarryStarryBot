@@ -53,16 +53,16 @@ def move_steps(steps):
     global motor_step_counter 
     for i in range(steps): 
         for pin in range(0, len(motor_pins)):
-                GPIO.output( motor_pins[pin], step_sequence[motor_step_counter][pin] )
-            if direction==True:
-                motor_step_counter = (motor_step_counter - 1) % 8
-            elif direction==False:
-                motor_step_counter = (motor_step_counter + 1) % 8
-            else: # defensive programming
-                print( "uh oh... direction should *always* be either True or False" )
-                cleanup()
-                exit( 1 )
-            time.sleep( step_sleep )
+                GPIO.output( motor_pins[pin], step_sequence[motor_step_counter][pin])
+                if direction==True:
+                    motor_step_counter = (motor_step_counter - 1) % 8
+                elif direction==False:
+                    motor_step_counter = (motor_step_counter + 1) % 8
+                else: # defensive programming
+                    print( "uh oh... direction should *always* be either True or False" )
+                    cleanup()
+                    exit( 1 )
+                time.sleep( step_sleep )
 
 def cleanup():
     GPIO.output( in1, GPIO.LOW )
@@ -104,7 +104,7 @@ def on_coordinate(client, userdata, message):
     if step_count >= 0:
         direction = True
         move_steps(step_count)
-    else 
+    else:
         direction = False
         move_steps(-step_count)
 
